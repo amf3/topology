@@ -3,12 +3,20 @@
  */
 package topology;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class App {
     public String getGreeting() {
         return "Hello world.";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        proc processTable = new proc();
+        try {
+            System.out.println(processTable.getDefaultRoute());
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
     }
 }
